@@ -1,7 +1,7 @@
 # ScrollJS
 by [Sam Sirianni](https://www.samsirianni.com)
 
-ScrollJS is library written in Javascript.
+ScrollJS is a library written in Javascript.
 With ScrollJS you can animate elements on scroll events.
 Visit the [ScrollJS website](https://samsirianni.com/scrolljs).
 
