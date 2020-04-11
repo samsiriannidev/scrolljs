@@ -76,6 +76,10 @@ If you want to use ScrollJS directly in a HTML page, download the file **index.j
 - **flip-left**
 - **flip-up**
 - **flip-right**
+- **flip-up-right**
+- **flip-down-right**
+- **flip-up-left**
+- **flip-down-left**
 - **flip-down**
 - **scale-up**
 - **scale-down**

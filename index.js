@@ -1,6 +1,8 @@
 (function scrolljs() {
     "use strict";
 
+    var _firstLoad = true;
+
     const types = [
         'fade',
         'fade-up',
@@ -15,6 +17,10 @@
         'flip-right',
         'flip-up',
         'flip-down',
+        'flip-up-left',
+        'flip-up-right',
+        'flip-down-left',
+        'flip-down-right',
         'scale-up',
         'scale-down',
     ];
@@ -112,6 +118,10 @@
             case 'flip-right': flipRight(element.node, true); break;
             case 'scale-up': scaleUp(element.node, true); break;
             case 'scale-down': scaleDown(element.node, true); break;
+            case 'flip-up-left': flipUpLeft(element.node, true); break;
+            case 'flip-up-right': flipUpRight(element.node, true); break;
+            case 'flip-down-left': flipDownLeft(element.node, true); break;
+            case 'flip-down-right': flipDownRight(element.node, true); break;
                 
         }
         createObserver(element);
@@ -125,6 +135,7 @@
                 if (entry.isIntersecting) {
                     
                     if (entry.intersectionRatio >= 0.25) {
+                       
                         switch(element.type) {
                             case 'fade': fade(el, false); break;
                             case 'fade-up': fadeUp(el, false); break;
@@ -141,7 +152,13 @@
                             case 'flip-down': flipDown(el, false); break;
                             case 'scale-up': scaleUp(el, false); break;
                             case 'scale-down': scaleDown(el, false); break;
+                            case 'flip-up-left': flipUpLeft(el, false); break;
+                            case 'flip-up-right': flipUpRight(el, false); break;
+                            case 'flip-down-left': flipDownLeft(el, false); break;
+                            case 'flip-down-right': flipDownRight(el, false); break;
+
                         }
+                        
                     }
                 } else {
                     switch(element.type) {
@@ -160,6 +177,11 @@
                         case 'flip-down': flipDown(el, true); break;
                         case 'scale-up': scaleUp(el, true); break;
                         case 'scale-down': scaleDown(el, true); break;
+                        case 'flip-up-left': flipUpLeft(el, true); break;
+                        case 'flip-up-left': flipUpLeft(el, true); break;
+                        case 'flip-up-right': flipUpRight(el, true); break;
+                        case 'flip-down-left': flipDownLeft(el, true); break;
+                        case 'flip-down-right': flipDownRight(el, true); break;
                     }
                 }
             });
@@ -206,7 +228,7 @@
         }
     }
 
-    function fadeRight(element, init) {
+    function fadeRight(element, init) { 
         if(init) {
             element.style.transform = "translateX(75px)";
             element.style.opacity = 0;
@@ -257,41 +279,97 @@
     }
 
     function flipRight(element, init) {
+        element.style.transformOrigin = "right";
+        element.style.transformStyle ="preserve-3d";
         if(init) {
-            element.style.transform = "rotateY(-90deg)";
+            element.style.transform = "perspective(700px) rotateY(-90deg)";
             element.style.opacity = 0;
         } else {
-            element.style.transform = "rotateY(0)";
+            element.style.transform = "perspective(700px) rotateY(0)";
             element.style.opacity = 1;
         }
     }
 
     function flipUp(element, init) {
+        element.style.transformOrigin = "bottom";
+        element.style.transformStyle ="preserve-3d";
         if(init) {
-            element.style.transform = "rotateX(90deg)";
+            element.style.transform = "perspective(700px) rotateX(90deg)";
             element.style.opacity = 0;
         } else {
-            element.style.transform = "rotateX(0)";
+            element.style.transform = "perspective(700px) rotateX(0)";
             element.style.opacity = 1;
         }
     }
 
     function flipDown(element, init) {
+        element.style.transformOrigin = "top";
+        element.style.transformStyle ="preserve-3d";
         if(init) {
-            element.style.transform = "rotateX(-90deg)";
+            element.style.transform = "perspective(700px) rotateX(-90deg)";
             element.style.opacity = 0;
         } else {
-            element.style.transform = "rotateX(0)";
+            element.style.transform = "perspective(700px) rotateX(0)";
             element.style.opacity = 1;
         }
     }
 
     function flipLeft(element, init) {
+        element.style.transformOrigin = "left";
+        element.style.transformStyle ="preserve-3d";
         if(init) {
-            element.style.transform = "rotateY(90deg)";
+            element.style.transform = "perspective(700px) rotateY(90deg)";
             element.style.opacity = 0;
         } else {
-            element.style.transform = "rotateY(0)";
+            element.style.transform = "perspective(700px) rotateY(0)";
+            element.style.opacity = 1;
+        }
+    }
+
+    function flipUpLeft(element, init) {
+        element.style.transformOrigin = "left bottom";
+        element.style.transformStyle ="preserve-3d";
+        if(init) {
+            element.style.transform = "perspective(700px) rotateY(90deg) rotateX(90deg)";
+            element.style.opacity = 0;
+        } else {
+            element.style.transform = "perspective(700px) rotateY(0) rotateX(0)";
+            element.style.opacity = 1;
+        }
+    }
+
+    function flipUpRight(element, init) {
+        element.style.transformOrigin = "right bottom";
+        element.style.transformStyle ="preserve-3d";
+        if(init) {
+            element.style.transform = "perspective(700px) rotateY(-90deg) rotateX(90deg)";
+            element.style.opacity = 0;
+        } else {
+            element.style.transform = "perspective(700px) rotateY(0) rotateX(0)";
+            element.style.opacity = 1;
+        }
+    }
+
+    function flipDownLeft(element, init) {
+        element.style.transformOrigin = "left top";
+        element.style.transformStyle ="preserve-3d";
+        if(init) {
+            element.style.transform = "perspective(700px) rotateY(90deg) rotateX(-90deg)";
+            element.style.opacity = 0;
+        } else {
+            element.style.transform = "perspective(700px) rotateY(0) rotateX(0)";
+            element.style.opacity = 1;
+        }
+    }
+
+    function flipDownRight(element, init) {
+        element.style.transformOrigin = "right top";
+        element.style.transformStyle ="preserve-3d";
+        if(init) {
+            element.style.transform = "perspective(700px) rotateY(-90deg) rotateX(-90deg)";
+            element.style.opacity = 0;
+        } else {
+            element.style.transform = "perspective(700px) rotateY(0) rotateX(0)";
             element.style.opacity = 1;
         }
     }

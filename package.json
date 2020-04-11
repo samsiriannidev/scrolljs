@@ -1,6 +1,6 @@
 {
   "name": "@samsiri/scrolljs",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "This package provides a way to animate elements on scroll events",
   "main": "index.js",
   "scripts": {
