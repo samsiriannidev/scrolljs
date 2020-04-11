@@ -1,0 +1,20 @@
+{
+  "name": "@samsiri/scrolljs",
+  "version": "1.0.0",
+  "description": "This package provides a way to animate elements on scroll events",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "scroll",
+    "event",
+    "js",
+    "javascript",
+    "animation",
+    "animate",
+    "HTML"
+  ],
+  "author": "Sam Sirianni",
+  "license": "MIT"
+}
