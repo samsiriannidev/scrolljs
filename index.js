@@ -135,30 +135,32 @@
                 if (entry.isIntersecting) {
                     
                     if (entry.intersectionRatio >= 0.25) {
-                       
-                        switch(element.type) {
-                            case 'fade': fade(el, false); break;
-                            case 'fade-up': fadeUp(el, false); break;
-                            case 'fade-down': fadeDown(el, false); break;
-                            case 'fade-right': fadeRight(el, false); break;
-                            case 'fade-left': fadeLeft(el, false); break;
-                            case 'fade-up-right': fadeUpRight(el, false); break;
-                            case 'fade-up-left': fadeUpLeft(el, false); break;
-                            case 'fade-down-right': fadeDownRight(el, false); break;
-                            case 'fade-down-left': fadeDownLeft(el, false); break;
-                            case 'flip-left': flipLeft(el, false); break;
-                            case 'flip-right': flipRight(el, false); break;
-                            case 'flip-up': flipUp(el, false); break;
-                            case 'flip-down': flipDown(el, false); break;
-                            case 'scale-up': scaleUp(el, false); break;
-                            case 'scale-down': scaleDown(el, false); break;
-                            case 'flip-up-left': flipUpLeft(el, false); break;
-                            case 'flip-up-right': flipUpRight(el, false); break;
-                            case 'flip-down-left': flipDownLeft(el, false); break;
-                            case 'flip-down-right': flipDownRight(el, false); break;
-
+                        if(_firstLoad) {
+                            setTimeout(() => {
+                                switch(element.type) {
+                                    case 'fade': fade(el, false); break;
+                                    case 'fade-up': fadeUp(el, false); break;
+                                    case 'fade-down': fadeDown(el, false); break;
+                                    case 'fade-right': fadeRight(el, false); break;
+                                    case 'fade-left': fadeLeft(el, false); break;
+                                    case 'fade-up-right': fadeUpRight(el, false); break;
+                                    case 'fade-up-left': fadeUpLeft(el, false); break;
+                                    case 'fade-down-right': fadeDownRight(el, false); break;
+                                    case 'fade-down-left': fadeDownLeft(el, false); break;
+                                    case 'flip-left': flipLeft(el, false); break;
+                                    case 'flip-right': flipRight(el, false); break;
+                                    case 'flip-up': flipUp(el, false); break;
+                                    case 'flip-down': flipDown(el, false); break;
+                                    case 'scale-up': scaleUp(el, false); break;
+                                    case 'scale-down': scaleDown(el, false); break;
+                                    case 'flip-up-left': flipUpLeft(el, false); break;
+                                    case 'flip-up-right': flipUpRight(el, false); break;
+                                    case 'flip-down-left': flipDownLeft(el, false); break;
+                                    case 'flip-down-right': flipDownRight(el, false); break;
+        
+                                }
+                            }, element.duration);
                         }
-                        
                     }
                 } else {
                     switch(element.type) {
