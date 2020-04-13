@@ -7,6 +7,9 @@ Visit the [ScrollJS website](https://samsirianni.com/scrolljs).
 
 ## Installation
 
+**First thing first**, remember to link in the `head` section the CSS file (`scrolljs.css`) that you can directly download 
+at [this github link](https://github.com/samsiriannidev/scrolljs).
+
 ### NPM and React
 
 If you want to use ScrollJS with React, open the terminal and type:
@@ -38,7 +41,7 @@ export default class Index extends Component {
 
 ### HTML
 
-If you want to use ScrollJS directly in a HTML page, download the file **index.js** from
+If you want to use ScrollJS directly in a HTML page, download the files **scrolljs.js** and **scrolljs.css** from
 [my GitHub repository](https://github.com/samsiriannidev/scrolljs).
 
 #### Usage
@@ -46,9 +49,12 @@ If you want to use ScrollJS directly in a HTML page, download the file **index.j
 ```html
 <!DOCTYPE html>
 <html>
+    <head>
+        <link rel="stylesheet" href="scrolljs.css"/>
+    </head>
     <body>
         <h1 scrolljs="flip-left">Hello World!</h1>
-        <script src="index.js"></script>
+        <script src="scrolljs.js"></script>
     </body>
 </html>
 ```
