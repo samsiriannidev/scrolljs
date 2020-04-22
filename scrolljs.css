@@ -51,19 +51,19 @@
 }
 
 *[scrolljs="flip-up-left"] {
-    transform: perspective(700px) rotateY(90deg) rotateX(90deg);
+    transform: perspective(700px) rotate3d(1, 1, 0, 90deg);
 }
 
 *[scrolljs="flip-up-right"] {
-    transform: perspective(700px) rotateY(-90deg) rotateX(90deg);
+    transform: perspective(700px) rotate3d(1, -1, 0, 90deg);
 }
 
 *[scrolljs="flip-down-left"] {
-    transform: perspective(700px) rotateY(90deg) rotateX(-90deg);
+    transform: perspective(700px) rotate3d(-1, 1, 0, 90deg);
 }
 
 *[scrolljs="flip-down-right"] {
-    transform: perspective(700px) rotateY(-90deg) rotateX(-90deg);
+    transform: perspective(700px) rotate3d(-1, -1, 0, 90deg);
 }
 
 *[scrolljs="scale-up"] {

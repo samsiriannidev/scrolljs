@@ -99,7 +99,7 @@
 
     function initElement(element) {
         
-        element.node.style.transition = `all ${element.duration}ms ${element.timing}`;
+        element.node.style.transition = `all ${element.duration}ms ${element.timing} .2s`;
 
         createObserver(element);
     }
@@ -305,10 +305,10 @@
         element.style.transformOrigin = "left bottom";
         element.style.transformStyle ="preserve-3d";
         if(init) {
-            element.style.transform = "perspective(700px) rotateY(90deg) rotateX(90deg)";
+            element.style.transform = "perspective(700px) rotate3d(1, 1, 0, 90deg)";
             element.style.opacity = 0;
         } else {
-            element.style.transform = "perspective(700px) rotateY(0) rotateX(0)";
+            element.style.transform = "perspective(700px) rotate3d(0, 0, 0, 90deg)";
             element.style.opacity = 1;
         }
     }
@@ -317,10 +317,10 @@
         element.style.transformOrigin = "right bottom";
         element.style.transformStyle ="preserve-3d";
         if(init) {
-            element.style.transform = "perspective(700px) rotateY(-90deg) rotateX(90deg)";
+            element.style.transform = "perspective(700px) rotate3d(1, -1, 0, 90deg)";
             element.style.opacity = 0;
         } else {
-            element.style.transform = "perspective(700px) rotateY(0) rotateX(0)";
+            element.style.transform = "perspective(700px) rotate3d(0, 0, 0, 90deg)";
             element.style.opacity = 1;
         }
     }
@@ -329,10 +329,10 @@
         element.style.transformOrigin = "left top";
         element.style.transformStyle ="preserve-3d";
         if(init) {
-            element.style.transform = "perspective(700px) rotateY(90deg) rotateX(-90deg)";
+            element.style.transform = "perspective(700px) rotate3d(-1, 1, 0, 90deg)";
             element.style.opacity = 0;
         } else {
-            element.style.transform = "perspective(700px) rotateY(0) rotateX(0)";
+            element.style.transform = "perspective(700px) rotate3d(0, 0, 0, 90deg)";
             element.style.opacity = 1;
         }
     }
@@ -341,10 +341,10 @@
         element.style.transformOrigin = "right top";
         element.style.transformStyle ="preserve-3d";
         if(init) {
-            element.style.transform = "perspective(700px) rotateY(-90deg) rotateX(-90deg)";
+            element.style.transform = "perspective(700px) rotate3d(-1, -1, 0, 90deg)";
             element.style.opacity = 0;
         } else {
-            element.style.transform = "perspective(700px) rotateY(0) rotateX(0)";
+            element.style.transform = "perspective(700px) rotate3d(0, 0, 0, 90deg)";
             element.style.opacity = 1;
         }
     }
