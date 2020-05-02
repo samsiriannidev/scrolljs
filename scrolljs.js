@@ -38,24 +38,24 @@
             }
             return true;
         }
-    
+
         static checkDuration(str) {
             let duration = +str;
             if (isNaN(duration)) {
-                return duration;  
+                return duration;
             }
             return 600;
         }
-    
+
         // createFromoptions create an Element
-        // object from a string 
+        // object from a string
         // Ex. fadeup|400|ease-in
         static createFromOptions(node, str) {
             let options = str.split("|");
             let element;
 
-            
-    
+
+
             if (options) {
                 if (Element.checkType(options[0])) {
                     switch (options.length) {
@@ -82,35 +82,35 @@
                     element = new Element(node);
                 }
             }
-    
+
             return element;
         }
-    
-        
-    
+
+
+
     }
 
     let elements = document.querySelectorAll('[scrolljs]');
     elements.forEach(element => {
         let options = element.getAttribute("scrolljs");
-        
+
         initElement(Element.createFromOptions(element, options));
     });
 
     function initElement(element) {
-        
-        element.node.style.transition = `all ${element.duration}ms ${element.timing} .2s`;
+
+        element.node.style.transition = `transform ${element.duration}ms ${element.timing} .2s, opacity ${element.duration}ms ${element.timing} .2s`;
 
         createObserver(element);
     }
 
     function createObserver(element) {
-        
+
         let observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
                 let el = entry.target;
                 if (entry.isIntersecting) {
-                    
+
                     if (entry.intersectionRatio >= 0.25) {
                         switch(element.type) {
                             case 'fade': fade(el, false); break;
@@ -173,7 +173,7 @@
     }
 
     function fadeUp(element, init) {
-        
+
         if(init) {
             element.style.transform = "translateY(75px)";
             element.style.opacity = 0;
@@ -203,7 +203,7 @@
         }
     }
 
-    function fadeRight(element, init) { 
+    function fadeRight(element, init) {
         if(init) {
             element.style.transform = "translateX(75px)";
             element.style.opacity = 0;
